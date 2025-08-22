@@ -12,11 +12,19 @@ var tom : Array<Int> = [1,3,9,0,5]
 
 var count = 10
 
+
 while count != 0 {
     print(count)
     count=count-1
 }
+
+
 repeat{
     print("repeat while")
     count=count-1
 }while count == 0
+
+
+for i in stride(from: 0, to: 23, by: 2){
+    print(i)
+}

@@ -14,7 +14,6 @@
 		355770762E5742C700F65960 /* tempcalc.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = tempcalc.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		35794C942E2FCC2900D21746 /* error handeling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "error handeling.playground"; sourceTree = "<group>"; };
 		35825FC12D2033320057E808 /* loops .playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "loops .playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		359949A42E4DCDF90029B026 /* week1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = week1.playground; sourceTree = "<group>"; };
 		35D17DA12E2D209B00874C8C /* protocols.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = protocols.playground; sourceTree = "<group>"; };
 		35D5B29D2E0D5E8400AF62CE /* variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = variables.playground; sourceTree = "<group>"; };
 		35DB5E342B9EE15A00F63DD8 /* classes and objects .playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "classes and objects .playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -22,12 +21,14 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		35DF2B302E58907F0032DA21 /* leetcode problems */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "leetcode problems"; sourceTree = "<group>"; };
+		35DF2B352E5896E60032DA21 /* prac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = prac; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXGroup section */
 		353F44242B85F11600F5F995 = {
 			isa = PBXGroup;
 			children = (
+				35DF2B352E5896E60032DA21 /* prac */,
 				35DF2B302E58907F0032DA21 /* leetcode problems */,
 				355770762E5742C700F65960 /* tempcalc.playground */,
 				3544907E2D2471BB00F009E9 /* 2025.playground */,
@@ -39,7 +40,6 @@
 				35304E9C2E104DF3007489C0 /* functions.playground */,
 				35D17DA12E2D209B00874C8C /* protocols.playground */,
 				35794C942E2FCC2900D21746 /* error handeling.playground */,
-				359949A42E4DCDF90029B026 /* week1.playground */,
 			);
 			sourceTree = "<group>";
 		};
