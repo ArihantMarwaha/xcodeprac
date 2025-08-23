@@ -65,6 +65,69 @@ var common = set1.intersection(set2)
 print(common)
 
 //Count frequency of words in a sentence (Dictionary)
+var sen : String = "Hello my name is arihant , arihant loves to find the meaning of the the name arihant because arihant is likely to be a good name"
+var low : String = String(sen).lowercased()
+
+var Words : Array<String> = []
+var word : String = ""
+
+for ch in low{
+    
+    if ch.isLetter{
+        word.append(ch)
+    }
+    else{
+        if !word.isEmpty{
+            Words.append(word)
+            word = ""
+        }
+    }
+}
+
+if !word.isEmpty{
+    Words.append(word)
+}
+
+print(Words)
+
+
+//count the frequency
+var freq : [String : Int] = [:]
+
+for free in Words{
+    if let count = freq[free]{
+        freq[free] = count+1
+    }else{
+        freq[free]=1
+    }
+}
+
+print(freq)
+
+
+
 
 //Two Sum Problem → Find two numbers in an array that add up to a target (Dictionary-based)
+func twosum(_ input : [Int],_ target : Int)->(Int,Int)?{
+    
+    var Dict : [Int:Int] = [:]
+    var len : Int = input.count
+    
+    for i in 0..<len{
+        let nums = input[i]
+        let comle = target - nums
+        if let bone = Dict[nums]{
+            return (bone,i)
+        }
+        Dict[nums] = i
+    }
+    
+    return nil
+    
+}
+var tool : Array<Int> = [1,4,5,6]
+if let (i, j) = twosum(arr, 9) {
+    print("Indices: \(i), \(j)")   // 0, 1
+}
+
 //Flatten a nested array (using recursion + loops)
