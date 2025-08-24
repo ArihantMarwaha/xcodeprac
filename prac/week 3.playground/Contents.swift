@@ -91,9 +91,60 @@ func cubed (_ inp : Int)->Int{
 
 print(applyTwice(3, using: cubed(_:)))
 
-//inout
+//inout acts as a pointer
+func hold (_ inp : inout Int){
+    inp = inp*inp
+}
+
+var cold : Int = 5
+hold(&cold)
+print(cold)
+
+//closure
+let add = { (a: Int, b: Int) -> Int in
+    return a + b
+}
+
+let add2 : (Int,Int)-> Int = { a,b in
+    a+b
+}
+
+let add3 : (Int,Int)-> Int = { $0+$1 }
+
+var gone = add(1,3)
+var hole = add2(1,5)
+var pope = add3(1,9)
+
+print("\(gone),\(hole),\(pope)")
+
 
 //Write a closure to sort an array in custom order.
+
+
+//assending
+var goals : [Int] = [1,6,3,9,2,0,3]
+var top = goals.sorted { a,b  in
+    return a < b
+}
+print(top)
+
+//decending
+var goal = goals.sorted {$0 > $1}
+print(goal)
+
+//custom
+
+var custom = goals.sorted{
+    if $0%2 == 0 && $1%2 != 0 {
+        return false
+    }else if $0%2 != 0 && $1%2 == 0 {
+        return true
+    }else{
+       return $0 > $1
+    }
+}
+print(custom)
+
 //Use do–try–catch to read a file safely.
 //Implement a small calculator using closures.
 //Practice interview-style problems (like: implement map manually, write safe division with error handling).
