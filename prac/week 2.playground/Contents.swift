@@ -116,7 +116,7 @@ func twosum(_ input : [Int],_ target : Int)->(Int,Int)?{
     for i in 0..<len{
         let nums = input[i]
         let comle = target - nums
-        if let bone = Dict[nums]{
+        if let bone = Dict[comle]{
             return (bone,i)
         }
         Dict[nums] = i
@@ -126,8 +126,43 @@ func twosum(_ input : [Int],_ target : Int)->(Int,Int)?{
     
 }
 var tool : Array<Int> = [1,4,5,6]
-if let (i, j) = twosum(arr, 9) {
+if let (i, j) = twosum(tool, 9) {
     print("Indices: \(i), \(j)")   // 0, 1
 }
 
 //Flatten a nested array (using recursion + loops)
+enum NestedArray {
+    case int(Int)
+    case array([NestedArray])
+}
+
+func flatten(_ input: [NestedArray]) -> [Int] {
+    var result: [Int] = []
+    
+    for element in input {
+        switch element {
+        case .int(let value):
+            result.append(value)
+        case .array(let subArray):
+            let flatSub = flatten(subArray)   // recursion
+            for v in flatSub {                // loop append
+                result.append(v)
+            }
+        }
+    }
+    
+    return result
+}
+
+let nested: [NestedArray] = [
+    .int(1),
+    .array([
+        .int(2),
+        .array([.int(3), .int(4)]),
+        .int(5)
+    ]),
+    .int(6)
+]
+
+let flat = flatten(nested)
+print(flat) 

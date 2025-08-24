@@ -26,7 +26,7 @@ func flowers(bow : Int?, crow : String? , book : Bool?) {
           let yapp = book else {return}
     
     
-    print("\(hole) is reason why \(crow) will become \(yapp) and cause you to lose your virginiry")
+    print("\(hole) is reason why \(crow) will become \(yapp) and cause you to lose ")
 }
 
 flowers(bow: 69, crow: "AIDS monkey", book: true)
