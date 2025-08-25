@@ -145,6 +145,88 @@ var custom = goals.sorted{
 }
 print(custom)
 
+//Sort an array of tuples by the second element
+var tuple = [("Hello",32),("wasssup",89),("charlie",11)]
+var tuplesort = tuple.sorted { return $0.1 < $1.1}
+print(tuplesort)
+
+//Sort a dictionary by its values
+var dict = ["Alice":23,"Arihant":43,"Pokemon":11,"Bro":25]
+var dictsort = dict.sorted{
+    return $0.value < $1.value
+}
+print(dictsort)
+
+
+//map
+var tone : [Int] = [1,7,4,2,5,8,9]
+var click = tone.sorted{return $0<$1}
+var broth = click.map { $0 * $0 }
+print("Unsorted: \(tone)\nSorted: \(click)\nSquared: \(broth)")
+//convert to string
+var strt = tone.map {"Number : \($0)"}
+print(strt)
+
+//remove unwanted elements
+let values = ["1", "2", "hello", "4"]
+let ints = values.compactMap { Int($0) }
+print(ints)
+
+//filter
+var valer = [1,35,63,2,32,9,43,12,98]
+let newfliter = valer.filter{$0>10 && $0%2 == 0}
+print(newfliter)
+
+//reduce
+var sent = ["this","is","a","nice","sentence"]
+var sentence = sent.reduce(""){$0+" "+$1}
+print(sentence)
+
+//maximum
+let numbers = [10, 45, 32, 67, 99, 23]
+let maxNum = numbers.reduce(Int.min) { max($0, $1) }
+print(maxNum)
+
+//reduce challenges
+let yolo : [Int] = [1,2,3,4,5]
+var polo = yolo.reduce(1){$0*$1}
+print(polo)
+var yol = yolo.reduce(into: []){result,i in result.append(i*i)}
+print(yol)
+
+//combined problem
+//Filter → Keep only even numbers.
+//Map → Square each even number.
+//Reduce → Find the sum of all squared values.
+var total = [3, 7, 10, 15, 22, 35, 40]
+var final = total
+    .filter{$0%2==0}
+    .map{$0*$0}
+    .reduce(0){$0+$1}
+print(final)
+
+//compact map
+let optionalNumbers: [Int?] = [1, nil, 3, nil, 5]
+
+let result = optionalNumbers.compactMap { $0 }
+print(result)
+
+//flatmap
+
+//nested array
+let nestedArray = [[1, 2, 3], [4, 5], [6]]
+let results = nestedArray.flatMap { $0 }
+print(results)
+
+//strings
+let words = ["Hello", "World"]
+let characters = words.flatMap { $0 }
+print(characters)
+
+
+
+
+
 //Use do–try–catch to read a file safely.
 //Implement a small calculator using closures.
 //Practice interview-style problems (like: implement map manually, write safe division with error handling).
