@@ -228,5 +228,69 @@ print(characters)
 
 
 //Use do–try–catch to read a file safely.
+func readFileContents(at path: String) {
+    do {
+        let contents = try String(contentsOfFile: path, encoding: .utf8)
+        print("File contents:\n\(contents)")
+    } catch {
+        print("Error reading file: \(error.localizedDescription)")
+    }
+}
+
+// Example usage
+let path = "/Users/yourname/Desktop/test.txt"
+readFileContents(at: path)
+
 //Implement a small calculator using closures.
+var added : (Int,Int)->Int = {$0+$1}
+var sub : (Int,Int)->Int = {$0-$1}
+var mul : (Int,Int)->Int = {$0*$1}
+var div : (Int,Int)->Int = {$0/$1}
+var mod : (Int,Int)->Int = {$0%$1}
+
+func calc(_ a: Int, _ b: Int, using operation : (Int,Int)->Int)->Int{
+    return operation(a,b)
+}
+
+print(calc(9,4,using: mul))
+print(calc(5,4,using: added))
+print(calc(10,5,using:sub))
+print(calc(3,2,using: div))
+print(calc(9,4,using: mul))
+print(calc(20,4,using: mod))
+
 //Practice interview-style problems (like: implement map manually, write safe division with error handling).
+//map
+var arts = [2,45,64,78]
+var toned = arts.map { return $0 * 2
+}
+print(toned)
+
+
+
+//error handeling
+enum MathError: Error {
+    case divideByZero
+}
+
+func safeDivide(_ a: Int, _ b: Int) throws -> Int {
+    if b == 0 {
+        throw MathError.divideByZero
+    }
+    return a / b
+}
+
+// Usage
+do {
+    let result = try safeDivide(10, 2)
+    print("Result:", result)
+    
+    let fail = try safeDivide(10, 0)
+    print("Result:", fail)
+} catch MathError.divideByZero {
+    print("❌ Cannot divide by zero!")
+} catch {
+    print("Unexpected error: \(error)")
+}
+
+
