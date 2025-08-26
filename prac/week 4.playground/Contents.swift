@@ -51,3 +51,24 @@ toast.const *= 3
 
 
 
+
+struct initialise {
+    var total : Int
+    
+    //computed values
+    var area  : Int {
+        return total*4
+    }
+    
+    init(total totals: Int) {
+        total = totals * 34
+    }
+}
+
+var to = initialise(total: 5)
+print(to.total)
+print(to.area)
+
+
+
+
