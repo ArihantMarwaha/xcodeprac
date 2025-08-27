@@ -69,4 +69,10 @@ var to = initialise(total: 5)
 print(to.total)
 print(to.area)
 
+//generics 
+func maxValue<T: Comparable>(_ a: T, _ b: T) -> T {
+    return a > b ? a : b
+}
 
+print(maxValue(10, 20))      // 20
+print(maxValue("A", "B"))    // B
