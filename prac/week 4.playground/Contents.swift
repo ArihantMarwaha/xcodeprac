@@ -70,5 +70,3 @@ print(to.total)
 print(to.area)
 
 
-
-
