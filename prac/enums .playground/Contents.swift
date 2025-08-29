@@ -37,3 +37,32 @@ case .success(let data):
 case .failure(let error):
     print("Failed with error: \(error)")
 }
+
+
+
+enum errortypes : Error {
+    case toomuch
+    case tooless
+}
+
+func readfiles (_ name : String) throws -> String {
+    
+    if name == ""{
+        throw errortypes.tooless
+    }
+    return "The file was read sucessfully"
+    
+}
+
+do {
+    let filerpint = try readfiles("hello.txt")
+    print(filerpint)
+} catch errortypes.tooless {
+    print("File not found")
+}
+
+enum makes : Error{
+    case fileerror
+    case boss,hope,days
+}
+
