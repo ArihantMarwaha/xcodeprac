@@ -78,3 +78,30 @@ print(maxValue(10, 20))      // 20
 print(maxValue("A", "B"))    // B
 
 
+protocol Togglable {
+    mutating func toggle()
+}
+
+enum Switch: Togglable {
+    case on, off
+    
+    mutating func toggle() {
+        self = (self == .on) ? .off : .on
+    }
+}
+
+class Developer {
+    var name: String
+    init(name: String) { self.name = name }
+    deinit { print("\(name) is deallocated") }
+
+    lazy var printName: () -> Void = {
+        print("Developer: \(self.name)") // ❌ captures self strongly
+    }
+}
+
+var dev: Developer? = Developer(name: "Lord Hanta")
+dev?.printName()
+dev = nil // deinit not called → leak
+
+
