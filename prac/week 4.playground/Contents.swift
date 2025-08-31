@@ -105,3 +105,63 @@ dev?.printName()
 dev = nil // deinit not called → leak
 
 
+
+//study deinit and weak in depth
+protocol DownloaderDelegate: AnyObject { // AnyObject → ensures weak possible
+    func didFinishDownloading()
+}
+
+class Downloader {
+    weak var delegate: DownloaderDelegate?   // ✅ must be weak to avoid cycle
+    
+    func startDownload() {
+        print("Downloading...")
+        delegate?.didFinishDownloading()
+    }
+}
+
+class MyViewController: DownloaderDelegate {
+    var downloader: Downloader?
+    
+    func start() {
+        downloader = Downloader()
+        downloader?.delegate = self  // self points to downloader, downloader points back
+        downloader?.startDownload()
+    }
+    
+    func didFinishDownloading() {
+        print("Download finished!")
+    }
+    
+    deinit {
+        print("MyViewController deallocated")
+    }
+}
+
+// Usage
+var vc: MyViewController? = MyViewController()
+vc?.start()
+vc = nil // deinit will be called properly ✅
+
+
+class timers {
+    var bore : Timer?
+    
+    func startTimer() {
+        bore = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+            guard let self = self else { return }
+            print("Timer tick in \(self)")
+        }
+    }
+    
+    deinit {
+        print("TimerViewController deallocated")
+    }
+
+    
+}
+
+
+var time : timers? = timers()
+time=nil
+
