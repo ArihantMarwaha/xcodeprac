@@ -83,3 +83,5 @@ var pass : User = User()
 print(pass.checkPassword(""))
 print(pass.checkPassword("wrong password"))
 print(pass.checkPassword("secret123"))
+
+
