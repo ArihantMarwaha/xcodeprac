@@ -82,10 +82,6 @@ let task = Task {
     try await loadFile()
 }
 
-Task {
-    try await Task.sleep(nanoseconds: 1_000_000_000)
-    task.cancel() // cancel after 1 second
-}
 
 
 func downloadFiles() async -> [String] {
@@ -146,9 +142,6 @@ func loadLargeImage() async throws {
     print("Image fully loaded")
 }
 
-let task = Task {
-    try await loadLargeImage()
-}
 
 Task {
     try await Task.sleep(nanoseconds: 2_000_000_000)
