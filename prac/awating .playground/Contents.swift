@@ -86,3 +86,93 @@ Task {
     try await Task.sleep(nanoseconds: 1_000_000_000)
     task.cancel() // cancel after 1 second
 }
+
+
+func downloadFiles() async -> [String] {
+    await withTaskGroup(of: String.self) { group in
+        let files = ["a.pdf", "b.pdf", "c.pdf"]
+        
+        // Add tasks to the group
+        for file in files {
+            group.addTask {
+                try? await Task.sleep(nanoseconds: 1_000_000_000)
+                return "\(file) downloaded"
+            }
+        }
+        
+        // Collect results
+        var results = [String]()
+        for await result in group {
+            results.append(result)
+        }
+        
+        return results
+    }
+}
+
+Task {
+    let downloads = await downloadFiles()
+    print(downloads) // ["a.pdf downloaded", "b.pdf downloaded", "c.pdf downloaded"]
+}
+
+
+actor ChatRoom {
+    private var messages: [String] = []
+    
+    func postMessage(_ msg: String) {
+        messages.append(msg)
+    }
+    
+    func getMessages() -> [String] {
+        messages
+    }
+}
+
+let chat = ChatRoom()
+
+Task {
+    await chat.postMessage("Hello")
+    await chat.postMessage("How are you?")
+    print(await chat.getMessages())
+}
+
+
+func loadLargeImage() async throws {
+    for i in 1...5 {
+        try Task.checkCancellation()
+        print("Downloading chunk \(i)...")
+        try await Task.sleep(nanoseconds: 1_000_000_000)
+    }
+    print("Image fully loaded")
+}
+
+let task = Task {
+    try await loadLargeImage()
+}
+
+Task {
+    try await Task.sleep(nanoseconds: 2_000_000_000)
+    task.cancel()
+    print("❌ Image loading cancelled")
+}
+
+
+struct User: Decodable {
+    let id: Int
+    let name: String
+}
+
+func fetchUser() async throws -> User {
+    let url = URL(string: "https://jsonplaceholder.typicode.com/users/1")!
+    let (data, _) = try await URLSession.shared.data(from: url)
+    return try JSONDecoder().decode(User.self, from: data)
+}
+
+Task {
+    do {
+        let user = try await fetchUser()
+        print("✅ User loaded:", user.name)
+    } catch {
+        print("❌ Failed to fetch user:", error)
+    }
+}
