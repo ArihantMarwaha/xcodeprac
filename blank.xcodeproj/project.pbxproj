@@ -6,20 +6,8 @@
 	objectVersion = 70;
 	objects = {
 
-/* Begin PBXFileReference section */
-		35304E9C2E104DF3007489C0 /* functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = functions.playground; sourceTree = "<group>"; };
-		353F442B2B85F13300F5F995 /* first app.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "first app.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		3544907E2D2471BB00F009E9 /* 2025.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 2025.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		354A1B542D8A781600618BDD /* property wrappers.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "property wrappers.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		355770762E5742C700F65960 /* tempcalc.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = tempcalc.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		35794C942E2FCC2900D21746 /* error handeling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "error handeling.playground"; sourceTree = "<group>"; };
-		35825FC12D2033320057E808 /* loops .playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "loops .playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		35D17DA12E2D209B00874C8C /* protocols.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = protocols.playground; sourceTree = "<group>"; };
-		35D5B29D2E0D5E8400AF62CE /* variables.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = variables.playground; sourceTree = "<group>"; };
-		35DB5E342B9EE15A00F63DD8 /* classes and objects .playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "classes and objects .playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-/* End PBXFileReference section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		35D4CC5F2E72E1F8001F9DAF /* random */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = random; sourceTree = "<group>"; };
 		35DF2B302E58907F0032DA21 /* leetcode problems */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "leetcode problems"; sourceTree = "<group>"; };
 		35DF2B352E5896E60032DA21 /* prac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = prac; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -30,16 +18,7 @@
 			children = (
 				35DF2B352E5896E60032DA21 /* prac */,
 				35DF2B302E58907F0032DA21 /* leetcode problems */,
-				355770762E5742C700F65960 /* tempcalc.playground */,
-				3544907E2D2471BB00F009E9 /* 2025.playground */,
-				35825FC12D2033320057E808 /* loops .playground */,
-				35DB5E342B9EE15A00F63DD8 /* classes and objects .playground */,
-				354A1B542D8A781600618BDD /* property wrappers.playground */,
-				353F442B2B85F13300F5F995 /* first app.playground */,
-				35D5B29D2E0D5E8400AF62CE /* variables.playground */,
-				35304E9C2E104DF3007489C0 /* functions.playground */,
-				35D17DA12E2D209B00874C8C /* protocols.playground */,
-				35794C942E2FCC2900D21746 /* error handeling.playground */,
+				35D4CC5F2E72E1F8001F9DAF /* random */,
 			);
 			sourceTree = "<group>";
 		};
