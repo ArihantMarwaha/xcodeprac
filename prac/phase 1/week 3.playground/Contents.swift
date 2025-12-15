@@ -1,5 +1,3 @@
-import UIKit
-
 func prints (_ inp: String = "Hello") {
     print("Wassup \(inp)")
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		35D15AAE2EE8152900A89AC7 /* DSA main  */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "DSA main "; sourceTree = "<group>"; };
 		35D4CC5F2E72E1F8001F9DAF /* random */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = random; sourceTree = "<group>"; };
 		35DF2B302E58907F0032DA21 /* leetcode problems */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "leetcode problems"; sourceTree = "<group>"; };
 		35DF2B352E5896E60032DA21 /* prac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = prac; sourceTree = "<group>"; };
@@ -19,6 +20,7 @@
 				35DF2B352E5896E60032DA21 /* prac */,
 				35DF2B302E58907F0032DA21 /* leetcode problems */,
 				35D4CC5F2E72E1F8001F9DAF /* random */,
+				35D15AAE2EE8152900A89AC7 /* DSA main  */,
 			);
 			sourceTree = "<group>";
 		};

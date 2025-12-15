@@ -5,41 +5,53 @@ var greeting = "Hello, playground"
 print(greeting)
 
 
-struct Stack<T>{
+struct Queue<T>{
     fileprivate var array = [T]()
     
-    public var isempty : Bool {
-        return array.isEmpty
-    }
     
-    public var count : Int {
+    public var count: Int{
         return array.count
     }
     
-    public mutating func push(_ element : T){
+    public var isempty: Bool {
+        return array.isEmpty
+    }
+    
+    mutating func Enqueue(_ element : T){
         array.append(element)
     }
     
-    mutating func pop()-> T?{
-        return array.popLast()
+    mutating func Dequeue()-> T?{
+        if array.isEmpty{
+            return nil
+        }else{
+            return array.removeFirst()
+        }
     }
     
-    public var top : T? {
-        return array.last
+    public var front: T?{
+        return array.first
     }
 }
 
-var GenStack : Stack<Int> = Stack(array: [1,4,7,3,7,4,3])
-print(GenStack.array)
-print(GenStack.count)
+var queueOfNames = Queue(array: ["Carl", "Lisa", "Stephanie", "Jeff", "Wade"])
 
-for i in 0..<GenStack.count{
-    print("Current count : \(GenStack.count)")
-          if let valaue = GenStack.top {
-        print("Next element to be dropped \(valaue)")
+for i in 0..<queueOfNames.count{
+    if let names = queueOfNames.front{
+        print(names)
     }
-
-    GenStack.pop()
+   queueOfNames.Dequeue()
 }
+
+print(queueOfNames.isempty)
+
+for i in 0...10{
+    queueOfNames.Enqueue("\(i)")
+    if let names = queueOfNames.front{
+        print(names)
+    }
+    queueOfNames.Dequeue()
+}
+
 
 
