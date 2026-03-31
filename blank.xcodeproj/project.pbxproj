@@ -6,6 +6,10 @@
 	objectVersion = 70;
 	objects = {
 
+/* Begin PBXFileReference section */
+		351301782EF41F4D00E165FA /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+/* End PBXFileReference section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		35D15AAE2EE8152900A89AC7 /* DSA main  */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "DSA main "; sourceTree = "<group>"; };
 		35D4CC5F2E72E1F8001F9DAF /* random */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = random; sourceTree = "<group>"; };
@@ -17,6 +21,7 @@
 		353F44242B85F11600F5F995 = {
 			isa = PBXGroup;
 			children = (
+				351301782EF41F4D00E165FA /* Testing.playground */,
 				35DF2B352E5896E60032DA21 /* prac */,
 				35DF2B302E58907F0032DA21 /* leetcode problems */,
 				35D4CC5F2E72E1F8001F9DAF /* random */,
